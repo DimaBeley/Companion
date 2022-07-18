@@ -22,7 +22,7 @@
     "rules": {
         "semi": ["error", "always"],
         "quotes": ["error", "double"],
-        "linebreak-style": ["error", "unix"]
+        "linebreak-style": ["error", "unix"],
+        "import/extensions": ["ignorePackages"]
     },
-    "import/extensions": ["ignorePackages"]
 }

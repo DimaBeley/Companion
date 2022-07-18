@@ -11,6 +11,7 @@ import SendIcon from "@mui/icons-material/Send";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import CardMedia from "@mui/material/CardMedia";
+import { JsxElement } from "typescript";
 
 export default function SidebarList() {
     const [open, setOpen] = useState(false);
@@ -18,6 +19,25 @@ export default function SidebarList() {
     const handleClick = ():void => {
       setOpen(!open);
     };
+
+    const [imageState, setImageState] = useState(false);
+
+
+    function ChangedImages():JSX.Element {
+        if (imageState) {
+            return <CardMedia
+                component="img"
+                height="194"
+                image="https://img2.reactor.cc/pics/comment/%D0%94%D0%B6%D0%BE%D0%BD%D0%BD%D0%B8-%D0%94%D0%B5%D0%BF%D0%BF-%D0%90%D0%BA%D1%82%D0%B5%D1%80%D1%8B-%D0%B8-%D0%90%D0%BA%D1%82%D1%80%D0%B8%D1%81%D1%8B-%D0%97%D0%BD%D0%B0%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D0%BE%D1%81%D1%82%D0%B8-%D0%AD%D0%BC%D0%B1%D0%B5%D1%80-%D0%A5%D1%91%D1%80%D0%B4-3970490.jpeg"
+                alt="dangerous pic"/>
+        } else {
+            return <CardMedia
+                component="img"
+                height="194"
+                image="https://www.rd.com/wp-content/uploads/2021/01/GettyImages-1026515294.jpg"
+                alt="dangerous pic"/>
+        }
+    }
 
     return (
         <List
@@ -52,12 +72,10 @@ export default function SidebarList() {
                 <Collapse in={open} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                         <ListItemButton sx={{ pl: 4 }}>
-                        <CardMedia
-                            component="img"
-                            height="194"
-                            image="https://img2.reactor.cc/pics/comment/%D0%94%D0%B6%D0%BE%D0%BD%D0%BD%D0%B8-%D0%94%D0%B5%D0%BF%D0%BF-%D0%90%D0%BA%D1%82%D0%B5%D1%80%D1%8B-%D0%B8-%D0%90%D0%BA%D1%82%D1%80%D0%B8%D1%81%D1%8B-%D0%97%D0%BD%D0%B0%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D0%BE%D1%81%D1%82%D0%B8-%D0%AD%D0%BC%D0%B1%D0%B5%D1%80-%D0%A5%D1%91%D1%80%D0%B4-3970490.jpeg"
-                            alt="dangerous pic"
-                        />
+                            <div onClick={() => setImageState(!imageState)}>
+                                <ChangedImages/>
+                            </div>
+                        
                 </ListItemButton>
             </List>
         </Collapse>
