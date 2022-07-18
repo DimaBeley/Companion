@@ -20,5 +20,9 @@
         "@typescript-eslint"
     ],
     "rules": {
-    }
+        "semi": ["error", "always"],
+        "quotes": ["error", "double"],
+        "linebreak-style": ["error", "unix"]
+    },
+    "import/extensions": ["ignorePackages"]
 }
