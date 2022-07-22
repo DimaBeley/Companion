@@ -30,7 +30,7 @@
        ],
        "linebreak-style":[
           "error",
-          "windows"
+          "unix"
        ],
        "react/jsx-filename-extension":[
           1,
